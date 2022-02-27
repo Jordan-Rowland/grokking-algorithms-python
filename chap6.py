@@ -41,10 +41,10 @@ from collections import deque
 
 graph = {  # I know this is not geographically correct...
     "washington": ["oregon", "montana"],
-    "montana": [],
-    "oregon": ["utah", "colorado"],
-    "utah": ["colorado"],
-    "colorado": ["nevada"],
+    "montana": ["washington"],
+    "oregon": ["washington", "utah", "colorado"],
+    "utah": ["oregon", "colorado"],
+    "colorado": ["nevada", "oregon"],
     "nevada": ["california", "mexico"],
     "california": ["mexico", "central_america"],
     "mexico": ["texas"],
@@ -57,15 +57,20 @@ graph = {  # I know this is not geographically correct...
 }
 
 
-def graph_search(graph, from_, to):  # my example to find a path from one place to another
+def graph_search(graph, from_, to, searched=None):  # my example to find a path from one place to another
+    if searched is None:
+        searched = []
+    searched.append(from_)
     path = [from_]
     search_queue = graph.get(from_)
     while search_queue:
         node = search_queue.pop(0)
+        if node in searched:
+            continue
         if node == to:
             location = [node]
         else:
-            location = graph_search(graph, node, to)
+            location = graph_search(graph, node, to, searched)
         return path + location
     raise Exception(f"Could not find location {to} from starting location.")
 
