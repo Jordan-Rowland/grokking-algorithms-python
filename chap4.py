@@ -15,7 +15,6 @@ return_largest([10,11,12])
 return_largest([4,-50,7])
 
 def quicksort(arr):
-    counter += 1
     arr = arr[:]
     if len(arr) < 2:
         return arr
@@ -30,3 +29,5 @@ rand_list = [r(-20, 60) for _ in range(6)]
 qs = quicksort(rand_list)
 assert qs == sorted(rand_list)
 assert len(qs) == len(rand_list)
+
+print(quicksort([*map(lambda x: x.lower(), "Now I am going to sort a list of words!".split())]))
