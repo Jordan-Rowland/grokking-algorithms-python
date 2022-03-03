@@ -18,7 +18,7 @@ from collections import deque
 # }
 
 
-# def graph_search(graph, from_):  # dumb example from book
+# def graph_search(graph, from_):  # example from book
 #     search_queue = deque()
 #     search_queue += graph[from_]
 #     while search_queue:
@@ -62,11 +62,9 @@ def graph_search(graph, from_, to, searched=None):  # my example to find a path 
         searched = []
     searched.append(from_)
     path = [from_]
-    search_queue = graph.get(from_)
+    search_queue = [node for node in graph.get(from_) if node not in searched]
     while search_queue:
         node = search_queue.pop(0)
-        if node in searched:
-            continue
         if node == to:
             location = [node]
         else:
