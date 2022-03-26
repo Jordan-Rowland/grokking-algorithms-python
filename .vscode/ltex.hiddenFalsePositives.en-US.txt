@@ -1,4 +1,0 @@
-{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QI dig through my pack to find one of my NutriBars, a solid block of tasteless good that I subsist on for these runs.\\E$"}
-{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QI look at my tab again for the NanoCheck:\\E$"}
-{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QI take check of the doors leading to the alleyway I'm in, seeing one with Palgiacci's Cafe plastered above it, the metal door grate hanging open.\\E$"}
-{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QI glance to the front window and see the Powered by AIden decal, stuck on backwards from my view, but advertising to the outside world.\\E$"}
