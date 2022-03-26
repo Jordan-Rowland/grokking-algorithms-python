@@ -23,4 +23,23 @@ class ListNode:
         return self
 
 
-l = ListNode(1).add(2).add(5).add(11).remove()
+l = ListNode(1).add(2).add(3).add(4).add(5)
+
+
+def reverse_linked_list(node):
+    if node.next is None:
+        return node
+    curr_node = node
+    prev_node = None
+
+    while curr_node.next is not None:
+        next_node = curr_node.next
+        curr_node.next = prev_node
+        prev_node = curr_node
+        curr_node = next_node
+    curr_node.next = prev_node
+
+    return curr_node
+
+
+reverse_linked_list(l)
